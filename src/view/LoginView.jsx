@@ -1,13 +1,17 @@
-import React from 'react';
-import './LoginView.css'; 
+import './LoginView.css';
 
-export default function LoginView() {
+export default function LoginView({ onRegister }) {
+  function handleRegister(event) {
+    if (!onRegister || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    onRegister();
+  }
   return (
     <div className="login-container">
       <div className="login-card">
-        
+
         <h2 className="login-title">LOGIN</h2>
-        
+
         <form className="login-form">
           {/* Input de Usuario */}
           <div className="input-group">
@@ -32,7 +36,7 @@ export default function LoginView() {
         </form>
 
         {/* Enlace para ir al Registro */}
-        <a href="#" className="create-account-link">Crear cuenta</a>
+        <a href="/register" onClick={handleRegister} className="create-account-link">Crear cuenta</a>
 
       </div>
     </div>

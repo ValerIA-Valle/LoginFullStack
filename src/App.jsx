@@ -9,9 +9,10 @@ function App() {
 
   return (
     <>
-      <LoginView />
+      <div hidden={isRegister}>
+        <LoginView onRegister={() => navigate('/register')} />
+      </div>
+      {isRegister && <RegisterView onCancel={() => navigate('/')} />}
     </>
-  );
+  )
 }
-
-export default App;

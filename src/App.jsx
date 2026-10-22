@@ -3,9 +3,14 @@ import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
+import RecoveryView from './view/recuperacion.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
+
+  if (window.location.pathname === '/recuperar-contrasena') {
+    return <RecoveryView />
+  }
 
   return (
     <>

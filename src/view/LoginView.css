@@ -1,0 +1,119 @@
+/* Centrar toda la tarjeta en la pantalla */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f3f0f7; /* Un fondo gris claro sutil */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Tarjeta morada principal */
+.login-card {
+  background-color: #a38bbb; /* Morado pastel idéntico al de tu foto */
+  padding: 40px 30px;
+  border-radius: 4px;
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Título */
+.login-title {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+/* Grupos de inputs con íconos */
+.input-group {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco semitransparente */
+  border-radius: 4px;
+  margin-bottom: 15px;
+  padding: 10px 15px;
+}
+
+.input-icon {
+  margin-right: 12px;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.input-group input {
+  background: none;
+  border: none;
+  outline: none;
+  color: white;
+  width: 100%;
+  font-size: 1rem;
+}
+
+/* Cambiar el color del texto de ayuda (placeholder) */
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Fila de "Remember" y "Forgot password" */
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-bottom: 25px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.forgot-link {
+  color: white;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.forgot-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+/* Botón Ovalado de LOGIN */
+.login-btn {
+  background-color: #83679b; /* Morado un poco más oscuro para el botón */
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 50%; /* Es más angosto que el contenedor */
+  border-radius: 20px; /* Bordes completamente redondeados/ovalados */
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-bottom: 25px;
+}
+
+.login-btn:hover {
+  background-color: #6e5285;
+}
+
+/* Enlace inferior de Crear Cuenta */
+.create-account-link {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.create-account-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}

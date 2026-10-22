@@ -1,26 +1,11 @@
-import { useEffect, useState } from 'react'
-import LoginView from './view/LoginView.jsx'
-import RegisterView from './view/RegisterView.jsx'
+import React from 'react';
+import LoginView from './view/LoginView';
+import RecoveryView from './view/recuperacion';
 
-export default function App() {
-  const [path, setPath] = useState(() => window.location.pathname)
-
-  useEffect(() => {
-    function handlePopState() {
-      setPath(window.location.pathname)
-    }
-    window.addEventListener('popstate', handlePopState)
-    return () => window.removeEventListener('popstate', handlePopState)
-  }, [])
-
-  function navigate(nextPath) {
-    if (window.location.pathname !== nextPath) {
-      window.history.pushState(null, '', nextPath)
-    }
-    setPath(nextPath)
+function App() {
+  if (window.location.pathname === '/recuperar-contrasena') {
+    return <RecoveryView />;
   }
-
-  const isRegister = path === '/register' || path === '/register/'
 
   return (
     <>

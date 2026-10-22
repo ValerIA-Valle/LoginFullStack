@@ -24,7 +24,7 @@ export default function LoginView() {
             <label className="remember-me">
               <input type="checkbox" /> Recordarme
             </label>
-            <a href="#" className="forgot-link">Olvidaste tu contraseña?</a>
+            <a href="/recuperar-contrasena" className="forgot-link">¿Olvidó su contraseña?</a>
           </div>
 
           {/* Botón de ingreso */}

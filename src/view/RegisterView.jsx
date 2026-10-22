@@ -21,7 +21,7 @@ function Icon({ name }) {
   return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[name]}</svg>
 }
 
-export default function RegisterView() {
+export default function RegisterView({ onCancel }) {
   const [values, setValues] = useState({ ...emptyRegistration })
   const [errors, setErrors] = useState({})
   const [visible, setVisible] = useState({})
@@ -53,6 +53,7 @@ export default function RegisterView() {
     setVisible({})
     setSubmitted(false)
     setSuccess(false)
+    onCancel?.()
   }
 
   return (

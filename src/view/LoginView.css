@@ -4,13 +4,13 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #f3f0f7; /* Un fondo gris claro sutil */
+  background-color: #f3f0f7;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Tarjeta morada principal */
 .login-card {
-  background-color: #a38bbb; /* Morado pastel idéntico al de tu foto */
+  background-color: #a38bbb;
   padding: 40px 30px;
   border-radius: 4px;
   width: 100%;
@@ -32,7 +32,7 @@
 .input-group {
   display: flex;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco semitransparente */
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 4px;
   margin-bottom: 15px;
   padding: 10px 15px;
@@ -53,7 +53,6 @@
   font-size: 1rem;
 }
 
-/* Cambiar el color del texto de ayuda (placeholder) */
 .input-group input::placeholder {
   color: rgba(255, 255, 255, 0.6);
 }
@@ -87,12 +86,12 @@
 
 /* Botón Ovalado de LOGIN */
 .login-btn {
-  background-color: #83679b; /* Morado un poco más oscuro para el botón */
+  background-color: #83679b;
   color: white;
   border: none;
   padding: 12px;
-  width: 50%; /* Es más angosto que el contenedor */
-  border-radius: 20px; /* Bordes completamente redondeados/ovalados */
+  width: 50%;
+  border-radius: 20px;
   font-weight: bold;
   font-size: 0.95rem;
   cursor: pointer;

@@ -1,3 +1,5 @@
+import React from 'react'; // 1. Agregamos la importación que faltaba
+
 const styles = {
   page: {
     boxSizing: 'border-box',
@@ -53,37 +55,6 @@ const styles = {
     fontWeight: 600,
     cursor: 'pointer',
   },
-  backButton: {
-    display: 'block',
-    boxSizing: 'border-box',
-    width: '100%',
-    marginTop: 14,
-    padding: '10px 14px',
-    borderRadius: 3,
-    background: '#83679b',
-    color: '#fff',
-    fontSize: 14,
-    fontWeight: 600,
-    textAlign: 'center',
-    textDecoration: 'none',
-  },
-  help: {
-    margin: '28px 0 8px',
-    color: '#555e6b',
-    fontSize: 14,
-    lineHeight: 1.6,
-  },
-  returnText: {
-    margin: 0,
-    color: '#555e6b',
-    fontSize: 14,
-    lineHeight: 1.6,
-  },
-  link: {
-    color: '#83679b',
-    textDecoration: 'underline',
-    textUnderlineOffset: 2,
-  },
   help: {
     margin: '30px 0 8px',
     color: '#555e6b',
@@ -100,10 +71,12 @@ const styles = {
     color: '#83679b',
     textDecoration: 'underline',
     textUnderlineOffset: 2,
+    cursor: 'pointer'
   },
 }
 
-function RecoveryView() {
+// 2. Agregamos { onBack } para recibir la función desde App.jsx
+function RecoveryView({ onBack }) {
   return (
     <main style={styles.page}>
       <section aria-labelledby="recovery-title" style={styles.card}>
@@ -125,11 +98,22 @@ function RecoveryView() {
         </form>
         <p style={styles.help}>¿Ya tienes tu contraseña?</p>
         <p style={styles.returnText}>
-          Entonces, <a href="/" style={styles.link}>haz click aquí</a> para acceder a tu Extranet de Cliente.
+          Entonces,{' '}
+          {/* 3. Cambiamos el comportamiento para que use onBack sin recargar la web */}
+          <a 
+            style={styles.link} 
+            onClick={(e) => {
+              e.preventDefault();
+              onBack();
+            }}
+          >
+            haz click aquí
+          </a>{' '}
+          para acceder a tu Login.
         </p>
       </section>
     </main>
   )
 }
 
-export default RecoveryView
+export default RecoveryView;

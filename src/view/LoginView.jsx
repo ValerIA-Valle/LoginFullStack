@@ -1,43 +1,75 @@
-import './LoginView.css';
+import React, { useState } from 'react';
+import './LoginView.css'; // Aquí llamamos al archivo de estilos CSS de arriba
 
-export default function LoginView({ onRegister }) {
-  function handleRegister(event) {
-    if (!onRegister || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-    event.preventDefault();
-    onRegister();
-  }
+export default function LoginView({ onNavigateToRegister, onNavigateToRecovery }) {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log('Datos listos para enviar:', { username, password });
+  };
+
   return (
     <div className="login-container">
       <div className="login-card">
-
         <h2 className="login-title">LOGIN</h2>
-
-        <form className="login-form">
-          {/* Input de Usuario */}
+        
+        <form className="login-form" onSubmit={handleSubmit}>
+          {/* Input Usuario */}
           <div className="input-group">
             <span className="input-icon">👤</span>
-            <input type="text" placeholder="Usuario" required />
+            <input 
+              type="text" 
+              placeholder="Usuario" 
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required 
+            />
           </div>
 
+          {/* Input Contraseña */}
           <div className="input-group">
             <span className="input-icon">🔒</span>
-            <input type="password" placeholder="Contraseña" required />
+            <input 
+              type="password" 
+              placeholder="Contraseña" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required 
+            />
           </div>
 
           <div className="login-options">
             <label className="remember-me">
               <input type="checkbox" /> Recordarme
             </label>
-            <a href="/recuperar-contrasena" className="forgot-link">¿Olvidó su contraseña?</a>
+            <a 
+              href="#" 
+              className="forgot-link"
+              onClick={(e) => {
+                e.preventDefault();
+                onNavigateToRecovery();
+              }}
+            >
+              ¿Olvidó su contraseña?
+            </a>
+
           </div>
 
-          {/* Botón de ingreso */}
           <button type="submit" className="login-btn">LOGIN</button>
         </form>
 
-        {/* Enlace para ir al Registro */}
-        <a href="/register" onClick={handleRegister} className="create-account-link">Crear cuenta</a>
-
+        <a 
+          href="#" 
+          className="create-account-link"
+          onClick={(e) => {
+            e.preventDefault();
+            onNavigateToRegister();
+          }}
+        >
+          Crear cuenta
+        </a>
       </div>
     </div>
   );
